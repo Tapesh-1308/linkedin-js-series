@@ -144,7 +144,10 @@ Means - variables are accessible within entire function in which they are declar
 - introduced in es6
 - block scoped
 - value can not be reassigned
-- must assign value while declaration 
+- must assign value while declaration
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/e93073d8-1e74-4b8b-825e-077486db236e)
+
 
 # JavaScript: Execution Context ⭐
 
@@ -177,6 +180,10 @@ When the JS engine scans code, it creates an environment called the Execution Co
 
 We will explore more about scopes and how the JS engine works internally in later posts. So stay tuned ✨
 
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/8b0d3621-23f0-42bc-96ed-5edccafe6e17)
+
+
 # JavaScript Hoisting - Explained EASILY
 
 ## Prerequisite
@@ -205,6 +212,10 @@ Functions become accessible even before the line they are declared. Hoisting doe
 ## From where I learned Hoisting?
 - Watch this video: [Akshay Saini's video](https://lnkd.in/gfdGax5P) 🚀
 - Read this freeCodeCamp Article: [freeCodeCamp Article](https://lnkd.in/gyP6Qc_s)
+
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/e9a100aa-0f0c-4d3b-a95a-510a1d33d18f)
+
 
 # JavaScript: Function Declaration vs Function Expression and Much More🔥
 
@@ -284,6 +295,10 @@ So, JavaScript functions are first class 🔥
 ## Sum up 💪
 A variable that has been declared but not assigned a value is `undefined`, and a variable that has not been declared at all is `not defined`.
 
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/f8223be8-8560-4b44-830d-e2e6f783a362)
+
+
 # JavaScript: Scope and Lexical Scope 🔥
 
 ## Disclaimer ⚠
@@ -341,6 +356,10 @@ As in the above example:
 ### Chain
 C -> B -> A -> GEC
 
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/85288d8a-8ee7-4c48-a7d7-cd108540f62c)
+
+
 # JavaScript: Types of Errors 🤡
 
 Three types of errors you can see in JavaScript:
@@ -377,6 +396,9 @@ function testFunction() {
 
 testFunction();
 ```
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/8473a158-0c01-4ebd-a19c-e3bdaac08753)
+
 
 # JavaScript: Block Scope & Shadowing🔥
 
@@ -444,6 +466,9 @@ var a = 10;
 }
 ```
 
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/95a090ff-571b-4f70-aaa9-e667bd519874)
+
+
 # JavaScript: Closures 🔥
 
 A closure is the combination of a function bundled together with a reference to its lexical environment. 
@@ -462,6 +487,10 @@ In JavaScript, a closure is a function that remembers its outer variables and ca
 - Variables declared inside a closure are not garbage collected. 
 - Garbage collection is done when function execution gets completed. All the variables are deleted from memory.
 - Too many closures can slow down your application, caused by duplication of code in memory.
+
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/702be480-b25b-4164-adfc-5f6c8c10489b)
+
 
 # JavaScript: Callback Functions 🔥
 
@@ -486,6 +515,10 @@ See the image below for visual representation:
 ### Tips
 
 - **Event Listener Optimization**: Removing event listeners when not in use can optimize memory usage, preventing potential slowdowns on websites.
+
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/d650af8e-30ae-451b-a315-f158e8b9f233)
+
 
 # JavaScript: Working of Async Code 🔥
 
@@ -543,6 +576,10 @@ During Event Listener usage, the original callback remains in the Web API enviro
 **Q. What if `setTimeout` delay is 0 ms?**
 
 **A.** Even with a 0 ms delay, the callback goes through the whole process and waits for the call stack to be empty.
+
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/9d95bfb4-44b5-46a8-bd41-eec2a9ea8ea9)
+
 
 # How JavaScript Engine Works 🚂💨
 
@@ -607,6 +644,10 @@ Execution is not possible without the memory heap and call stack.
 
 All browsers work differently, but the above steps are used by v8 and most engines work similarly.
 
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/9cb6935c-2512-45ed-8fe9-efafbaf1c629)
+
+
 # JavaScript: Callbacks Problems 🔥
 
 ### Mainly two problems with callbacks:
@@ -631,6 +672,10 @@ Inversion of control means losing control over the code when using callbacks.
 ### SOLUTION??
 
 **Promises** 🔥
+
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/c8c2aaea-ebb8-42be-bbfb-0d73735cf888)
+
 
 # JavaScript: Promises 🔥
 
@@ -680,6 +725,10 @@ When using Promises, we have full control over the logic, allowing us to solve t
 - Method that always runs, regardless of whether resolved or rejected.
 - Here we can handle the result of promises whether rejected or resolved.
 
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/fd4aa8b8-bd57-4505-82ab-9e2991365311)
+
+
 # JavaScript: Promise APIs 🔥🔥
 
 Promises in JavaScript are used to handle asynchronous operations. There are several Promise APIs that allow you to work with multiple promises efficiently.
@@ -721,6 +770,10 @@ These Promise APIs provide powerful tools for handling asynchronous operations a
 
 Next Topic: Async/Await 🔥
 
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/d0cce268-c4fb-429c-bb5d-799fcaae3237)
+
+
 # JavaScript: Async/Await 🔥
 
 Async/Await is syntactical sugar over `.then()` and `.catch()` chains, making promises handling more elegant.
@@ -757,6 +810,10 @@ try {
   // Run regardless of whether the promise is resolved or rejected
 }
 ```
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/751d13e7-d63e-4750-9840-99fb397e0061)
+
+
 # JavaScript: `this` keyword 🔥
 
 - `this` always refers to an object.
@@ -801,6 +858,10 @@ try {
 ## `this` in call(), apply(), bind()
  - Will see later.
 
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/7affd0a0-0adf-4e4a-98c3-58253c70bbb3)
+
+
 # JavaScript: "use strict" 🔥
 
 "use strict" was introduced in ES5 and it makes JavaScript code execute in strict mode. It can be declared at the beginning of a script or a function.
@@ -844,6 +905,10 @@ try {
   - `newThisObj`: Value to replace 'this' inside the function.
   - `args`: Other required arguments for the function.
 
+
+ ![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/61904420-1b35-436b-90c5-2ccf35d87758)
+
+
 # JavaScript: Currying 🍛 🔥
 
 Transforms a function with multiple arguments into a nested series of functions, each taking a single argument.
@@ -881,6 +946,10 @@ curry(arg2);
 ```
 ☠️ This topic needs a video reference to understand properly, so do YouTube ▶️ to see more examples.
 
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/eaa908d4-d703-422d-8e4f-9945b76cd359)
+
+
 # JavaScript: Prototype 🔥🔥
 
 In JS, objects can inherit properties from another object.
@@ -916,6 +985,11 @@ Object.getPrototypeOf(arr);
 // or
 arr.__proto__
 ```
+
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/74e74b5a-bf7b-4251-9a54-b562eec3ee4c)
+
+
 ## Prototype Inheritance 🔥
 
 The ability of JS objects to inherit properties from another object.
@@ -955,6 +1029,12 @@ SomeClass.prototype.commonMethod = function () {}
 📍 Here we can't use arrow function, because we need `this` referring to the class to access other class variables and methods.
 
 In class keyword syntax, methods are automatically put inside the prototype.
+
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/a5065c6e-4037-4363-b41b-0b6f2b8eade7)
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/2f6cd48b-6e5b-43c6-8735-96bde307d936)
+
 
 # JavaScript: Inheritance 🔥👨‍👦
 
@@ -1008,6 +1088,12 @@ Using Getters and Setters, since we can access private properties within the cla
 Look at the image below showcasing two different syntaxes 🖼
 
 
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/3343abe6-08cf-4181-a339-1f21ee62d0d4)
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/df18aef6-4783-4cb3-8e85-f79de2cd396c)
+
+
+
 # JavaScript: Static Properties and Methods 🔥
 
 These are shared by all instances of a class.
@@ -1045,6 +1131,9 @@ static {
   // ...
 }
 ```
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/abee6354-8c93-493a-86cc-b12d00c07c1a)
+
 
 # JavaScript: Event Bubbling & Capturing 🔥
 
@@ -1104,6 +1193,8 @@ e.stopImmediatePropagation();
 
 - Stops all the parent event listeners and other event listeners on the target as well.
 
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/619c21cc-b75e-4f1a-b04f-29bb3568034c)
+
 
 # JavaScript: Event Delegation 🔥
 
@@ -1115,6 +1206,10 @@ By doing so:
 - ☑️ Performance improvement.
 - ☑️ Dynamic (adding new elements will automatically have event listeners).
 - ☑️ Code simplification.
+
+
+  ![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/b222b897-fd5e-4efd-a9fa-fc73b0f5fc42)
+
 
 # JavaScript: Script Loading 🔥
 
@@ -1142,6 +1237,7 @@ Three ways to load scripts:
 - If the script relies on other scripts, then use `defer`.
 - If the script is small and is relied upon by an `async` script, then use `<script>` with no attributes placed above the `async` scripts.
 
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/8e2f9bbb-1d13-4cc6-ab32-a2d4a6ac962f)
 
 # JavaScript: Coercion 🔥🔥🔥
 
@@ -1185,6 +1281,9 @@ Example: `ToPrimitive`, `ToNumber`, `ToString`, `ToBoolean`, etc.
 - `String` -----------> (if all digits - number, else - `NaN`)
 - `Symbol` -----------> `TypeError`
 - `Object` -----------> will see later.
+
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/73b49b70-75b9-4137-b2d9-3f3ce2404d52)
 
 
 # JavaScript: Coercion Day 2 🔥🔥
@@ -1232,6 +1331,10 @@ Example:
 - `[1, 2, 3]` -> `"1, 2, 3"`
 - `[[], [], []]` -> `", ,"`
 - `[ , , , , ]` -> `", , , , "`
+
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/84b870d5-3686-4935-9d18-091f5e65b239)
+
 
 
 # JavaScript: Coercian Day 3 🔥🔥
@@ -1322,6 +1425,10 @@ By default:
 - `!undefined` -> `true`
 - `!null` -> `true`
 
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/ba963ad8-e0ed-44cc-b67a-07aedabb2fa0)
+
+
 # JavaScript: == 🆚 ===
 
 **Myth:** Double equals doesn't check type 🤡
@@ -1368,6 +1475,8 @@ Checks if both operands are of the same type:
 - Else, return false.
 
 
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/0c890b01-836a-4665-a4ee-9695600130ee)
+
 # JavaScript: NaN (Not a Number) 🥵
 
 NaN doesn't mean "Not a Number"; rather, it gives the notion of an invalid number.
@@ -1399,6 +1508,9 @@ It doesn't convert type.
 Number.isNaN("abc") // false
 ```
 
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/ddc09071-5725-4575-bb08-dee9ab47c08d)
+
+
 # 🔥 **Debouncing and Throttling** 🔥
 
 📍 **Debouncing and throttling** are performance optimization techniques in JavaScript for managing event handlers.
@@ -1423,6 +1535,13 @@ It waits for a specified time delay after the last event occurrence before execu
 #### Throttling 💨
 
 - Limits the frequency of function invocations, particularly useful for events like scrolling where rapid firing could degrade user experience.
+
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/7258354a-5245-4be4-80e2-dfc61a9be4b0)
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/2cf7db2a-0e56-4d8f-80a0-e13aa1ccb539)
+
+
 
 # How to loop over objects? 🤔👀
 
@@ -1451,3 +1570,5 @@ This method returns an array of all properties (including non-enumerable propert
 🔥 **Using a `for...of` loop with Object.entries()**
 
 This loop iterates over the values of an array, which is produced by Object.entries().
+
+![image](https://github.com/Tapesh-1308/linkedin-js-series/assets/71540051/9caf8ffc-aa6f-4171-aff7-541b0a508d5a)
