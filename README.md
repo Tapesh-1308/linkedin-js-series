@@ -1,3 +1,44 @@
+# Table of Contents
+
+1. [JavaScript: Getting Started 🔥](#javascript-getting-started-)
+2. [JavaScript: Data types and variables 🔥](#javascript-data-types-and-variables-)
+3. [JavaScript: Execution Context ⭐](#javascript-execution-context-)
+4. [JavaScript Hoisting - Explained EASILY](#javascript-hoisting---explained-easily)
+5. [JavaScript: Function Declaration vs Function Expression and Much More🔥](#javascript-function-declaration-vs-function-expression-and-much-more)
+6. [JavaScript: undefined vs Not defined🔥](#javascript-undefined-vs-not-defined)
+7. [JavaScript: Scope and Lexical Scope 🔥](#javascript-scope-and-lexical-scope-)
+8. [JavaScript: Types of Errors 🤡](#javascript-types-of-errors-)
+9. [JavaScript: Block Scope & Shadowing🔥](#javascript-block-scope--shadowing)
+10. [JavaScript: Closures 🔥](#javascript-closures-)
+11. [JavaScript: Callback Functions 🔥](#javascript-callback-functions-)
+12. [JavaScript: Working of Async Code 🔥](#javascript-working-of-async-code-)
+13. [How JavaScript Engine Works 🚂💨](#how-javascript-engine-works-)
+14. [JavaScript: Callbacks Problems 🔥](#javascript-callbacks-problems-)
+15. [JavaScript: Promises 🔥](#javascript-promises-)
+16. [JavaScript: Promise APIs 🔥🔥](#javascript-promise-apis-)
+17. [JavaScript: Async/Await 🔥](#javascript-asyncawait-)
+18. [JavaScript: `this` keyword 🔥](#javascript-this-keyword-)
+19. [JavaScript: "use strict" 🔥](#javascript-use-strict-)
+20. [JavaScript: call(), apply(), bind() 🔥](#javascript-call-apply-bind-)
+21. [JavaScript: Currying 🍛 🔥](#javascript-currying--)
+22. [JavaScript: Prototype 🔥🔥](#javascript-prototype-)
+23. [JavaScript: OOP Introduction🔥](#javascript-oop-introduction)
+24. [JavaScript: Inheritance 🔥👨‍👦](#javascript-inheritance-)
+25. [JavaScript: Abstraction and Encapsulation 🔥](#javascript-abstraction-and-encapsulation-)
+26. [JavaScript: Static Properties and Methods 🔥](#javascript-static-properties-and-methods-)
+27. [JavaScript: Event Bubbling & Capturing 🔥](#javascript-event-bubbling--capturing-)
+28. [JavaScript: Event Delegation 🔥](#javascript-event-delegation-)
+29. [JavaScript: Script Loading 🔥](#javascript-script-loading-)
+30. [JavaScript: Coercion 🔥🔥🔥](#javascript-coercion-)
+31. [JavaScript: Coercion Day 2 🔥🔥](#javascript-coercion-day-2-)
+32. [JavaScript: Coercian Day 3 🔥🔥](#javascript-coercian-day-3-)
+33. [JavaScript: Coercion Last Day 🔥🔥🔥](#javascript-coercion-last-day-)
+34. [JavaScript: == 🆚 ===](#javascript---)
+35. [JavaScript: NaN (Not a Number) 🥵](#javascript-nan-not-a-number-)
+36. [Debouncing and Throttling 🔥](#-debouncing-and-throttling-)
+37. [How to loop over objects? 🤔👀](#how-to-loop-over-objects-)
+
+
 # JavaScript: Getting Started 🔥
 
 ## Introduction to ECMAScript
@@ -1358,7 +1399,7 @@ It doesn't convert type.
 Number.isNaN("abc") // false
 ```
 
-🔥 **Debouncing and Throttling** 🔥
+# 🔥 **Debouncing and Throttling** 🔥
 
 📍 **Debouncing and throttling** are performance optimization techniques in JavaScript for managing event handlers.
 
