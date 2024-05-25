@@ -838,4 +838,575 @@ f(a, b, c) -> f(a)(b, c)
 curry = func.bind(this, arg1);
 curry(arg2);
 ```
-☠️ This topic needs a video reference to understand properly, so do youtube ▶️ to see more examples.
+☠️ This topic needs a video reference to understand properly, so do YouTube ▶️ to see more examples.
+
+# JavaScript: Prototype 🔥🔥
+
+In JS, objects can inherit properties from another object.
+
+The object from where these properties are inherited is called Prototype.
+
+Example:
+
+All methods that are built-in within strings, arrays, and objects data structure.
+
+---
+
+## Prototype Chain ⛓️
+
+If we are accessing any property from a string/array/function, the property is not only searched in itself but also in the prototype. This chain continues until it reaches null.
+
+### Visualization 🔍
+
+string --prototype-> object --prototype-> null
+
+array --prototype-> object --prototype-> null
+
+function --prototype-> object --prototype-> null
+
+👀 Every object in JavaScript has an internal private property [[𝐩𝐫𝐨𝐭𝐨𝐭𝐲𝐩𝐞]]
+
+- not accessible directly in code
+
+But to find [[𝐩𝐫𝐨𝐭𝐨𝐭𝐲𝐩𝐞]] we can use 👇🏻
+
+```javascript
+Object.getPrototypeOf(arr);
+// or
+arr.__proto__
+```
+## Prototype Inheritance 🔥
+
+The ability of JS objects to inherit properties from another object.
+
+Example: Array can access to all the properties of an object.
+Sure, here's the text converted directly into Markdown code:
+
+# JavaScript: OOP Introduction🔥
+
+JS is prototype based procedural language which means both functional and object oriented programming.
+
+## ✌ Two ways to achieve OOP in JS
+
+- Constructor Function
+- Class keyword (ES6, syntactic sugar over constructor function)
+
+See the image below to compare syntaxes 🖼
+
+We can create multiple instances of the same class using the `new` keyword.
+
+```javascript
+const obj = new SomeClass();
+```
+
+## 𝗣𝗿𝗼𝗯𝗹𝗲𝗺 𝘄𝗶𝘁𝗵 𝗖𝗼𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗼𝗿 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻
+
+- Some common methods declared in the constructor function get duplicated in every instance, which is not memory efficient.
+
+So we need to put this common method in the prototype of the constructor function.
+
+Initially, `SomeClass.prototype` is an empty object.
+
+```javascript
+SomeClass.prototype.commonMethod = function () {}
+```
+
+📍 Here we can't use arrow function, because we need `this` referring to the class to access other class variables and methods.
+
+In class keyword syntax, methods are automatically put inside the prototype.
+
+# JavaScript: Inheritance 🔥👨‍👦
+
+We can inherit properties and methods of a parent class in a child class.
+
+## To inherit
+
+### In Constructor Function
+
+- To get properties: call the Parent constructor function with Child `this`.
+- To get methods: link the prototypes.
+
+**Syntax:**
+
+```javascript
+function Child(name) {
+  Parent.call(this, name); // Pass the required args
+}
+Child.prototype = Object.create(Parent.prototype);
+```
+
+- Make sure to write it above all child prototypes.
+
+### Using Class Syntax
+
+- Use `extends` keyword.
+- `super` keyword used to call the constructor of Parent.
+
+```javascript
+class Child extends Parent {
+  constructor(name) {
+    super(name); // Pass all the required args
+  }
+}
+```
+
+# JavaScript: Abstraction and Encapsulation 🔥
+
+## Abstraction
+
+We can make properties and methods private so that no one outside the class can access these properties.
+
+Use `#` before property or method name to declare it as a private entity.
+
+## Encapsulation
+
+The process of hiding and securing properties of objects. We need to provide another mechanism to access these private properties.
+
+Using Getters and Setters, since we can access private properties within the class.
+
+Look at the image below showcasing two different syntaxes 🖼
+
+
+# JavaScript: Static Properties and Methods 🔥
+
+These are shared by all instances of a class.
+
+```javascript
+class MyClass {
+  static count = 0;
+
+  static getCount() {
+    return MyClass.count;
+  }
+}
+```
+
+**Note:**
+
+- Can access static properties using class name or `this.constructor`.
+- Cannot access from class instances.
+- Static properties and methods are inherited.
+- Static properties are initialized only once.
+
+```javascript
+const obj = new MyClass();
+console.log(obj.count); // undefined
+
+console.log(MyClass.count); // 0
+```
+
+## Static Block
+
+- We can create a static block which will run the first time a static method is used.
+
+```javascript
+static {
+  // ...
+}
+```
+
+# JavaScript: Event Bubbling & Capturing 🔥
+
+Propagation refers to how an event travels through the DOM.
+
+## ✌ Phases of Propagation
+
+- **Bubbling**
+- **Capturing**
+
+For simplicity, we are using the click event to understand.
+
+### Bubbling 🎯 -> 🌱
+
+- Propagation of an event from the target (clicked element) to the root (highest level parent of the target).
+
+If the target is a child:
+1. First, the child is clicked.
+2. Second, the parent is clicked.
+3. Third, the grandparent is clicked.
+   - And so on, until the root element where the last event occurs.
+
+### Capturing (Trickling) 🌱 -> 🎯
+
+- Propagation of an event from the root to the target.
+
+If the target is a child:
+1. First, the grandparent is clicked.
+2. Second, the parent is clicked.
+3. Third, the child is clicked.
+
+We can trigger bubbling/capturing and control over the propagation.
+
+```javascript
+ele.addEventListener(event, callback, useCapture);
+```
+
+- **useCapture**: optional boolean value.
+  - Default: `false` (bubbling)
+  - `true` (capturing)
+
+## Problem:
+These propagations take time and increase workload.
+
+### Solution?
+
+```javascript
+e.stopPropagation();
+```
+
+- Prevents further propagation.
+- Stops all the parent event listeners but not other handlers on the target 🎯.
+
+```javascript
+e.stopImmediatePropagation();
+```
+
+- Stops all the parent event listeners and other event listeners on the target as well.
+
+
+# JavaScript: Event Delegation 🔥
+
+Event delegation is a technique in JavaScript where we delegate the responsibility of handling an event to a parent element.
+
+By doing so:
+
+- ☑️ We avoid attaching multiple event listeners to individual child elements.
+- ☑️ Performance improvement.
+- ☑️ Dynamic (adding new elements will automatically have event listeners).
+- ☑️ Code simplification.
+
+# JavaScript: Script Loading 🔥
+
+Three ways to load scripts:
+
+1. `<script>`
+   - HTML file will be parsed until the script file is hit.
+   - At that point parsing will stop and a request will be made to fetch the file (if external).
+   - Then script will be executed.
+   - Then HTML parsing resumes.
+
+2. `<script async>`
+   - Downloads the file during HTML parsing.
+   - After download, parsing will pause to execute JavaScript.
+   - Then HTML parsing resumes.
+
+3. `<script defer>`
+   - Downloads the files during HTML parsing.
+   - But only executes JavaScript after parsing has completed.
+   - Defer scripts are also guaranteed to execute in the order that they appear in the code.
+
+### When should I use what?
+
+- If the script is modular and does not rely on other scripts, then use `async`.
+- If the script relies on other scripts, then use `defer`.
+- If the script is small and is relied upon by an `async` script, then use `<script>` with no attributes placed above the `async` scripts.
+
+
+# JavaScript: Coercion 🔥🔥🔥
+
+💗 Ultimate Type Conversion Guide 💗
+
+Coercion - Type conversion
+
+✌ Types
+
+1. Implicit: when the language automatically converts types.
+
+2. Explicit: when we manually command to convert types.
+
+Example: `toString(1)` -> `"1"`
+
+## Abstract Operations
+
+- Operations/functions which are not available for end users to use.
+- JS internally uses them and these are mentioned in the official documentation.
+
+Example: `ToPrimitive`, `ToNumber`, `ToString`, `ToBoolean`, etc.
+
+## ToNumber
+
+- JS uses this when we subtract to a number.
+
+```javascript
+2 - "1"
+// ToNumber(2) - ToNumber("1") 
+// 2 - 1
+// 1
+```
+
+☑️ Subtraction always converts both operands to Number.
+
+## ToNumber Conversions
+
+- `undefined` -----------> `NaN`
+- `null` -----------> `+0`
+- `Boolean` -----------> `(True -> 1, False -> 0)`
+- `String` -----------> (if all digits - number, else - `NaN`)
+- `Symbol` -----------> `TypeError`
+- `Object` -----------> will see later.
+
+
+# JavaScript: Coercion Day 2 🔥🔥
+
+Today, we'll see `ToString()` Abstract Operation.
+
+## `ToString()` 💗
+
+- Use '+' operator to mimic this operation.
+- If any operand is a string, JS will convert both operands to a string and do string concatenation.
+
+Example:
+
+```javascript
+'2' + 2 = '22'
+```
+
+- Else, both operands will be converted to a number.
+
+Example:
+
+```javascript
+2 + true = 3
+```
+
+## `ToString` Conversions
+
+- `undefined` -----------> `'undefined'`
+- `null` -----------> `'null'`
+- `boolean` -----------> `'true'`/`'false'`
+- `number` -----------> Char by char to string
+- `symbol` -----------> TypeError
+
+## Important Examples 🎯
+
+- `"Tapesh" + "Dua" = "TapeshDua"`
+- `undefined + "xyz" = "undefinedxyz"`
+- `"5" + null = "5null"`
+- `"ab" + true = "abtrue"`
+
+## Other Conversions ☑️
+
+- `-0` -> `"0"`
+- `[]` -> `" "`
+- `[1, 2, 3]` -> `"1, 2, 3"`
+- `[[], [], []]` -> `", ,"`
+- `[ , , , , ]` -> `", , , , "`
+
+
+# JavaScript: Coercian Day 3 🔥🔥
+
+Understand at your own risk ☠️
+
+## `ToPrimitive()` 💗
+
+- It tries to convert an object into a primitive data type.
+- If it can't, it throws an error.
+
+## Algorithm:
+
+- Creates a hint variable and sets it to the preferred conversion type.
+
+Hint can be `Number` or `String`.
+
+If the hint is string:
+- Call `.toString()` method on the input object.
+- If the result is non-object, return it.
+- If the result is still an object:
+  - Call `.valueOf()`.
+  - If the result is non-object, return it.
+  - Else, return an error.
+
+Example:
+
+```javascript
+const obj = {a: 2, toString() => {return '1'}};
+'2' + obj = '21' // (Addition converts obj to string since one operand is already a string)
+
+```
+
+If the hint is number:
+- Call `.valueOf()` method on the input object.
+- If the result is non-object, return it.
+- If the result is still an object:
+  - Call `.toString()`.
+  - If the result is non-object, return it.
+  - Else, return an error.
+
+Example:
+
+```javascript
+const obj = {a: 2, valueOf => {return 1}};
+2 - obj = 1 // (Subtraction converts obj to number)
+
+```
+
+📍 Here, `.valueOf()` and `.toString()` are not abstract operations; we can call them.
+
+By default:
+
+- `obj.valueOf()` - returns the same obj.
+- `obj.toString()` - returns `'[object Object]'`.
+
+# JavaScript: Coercion Last Day 🔥🔥🔥
+
+𝗘𝗮𝘀𝘆 + 𝗜𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁 = 💗
+
+## Abstract Operation: `ToBoolean()`
+
+- Converts the given type to a boolean.
+- To mimic, we can use the logical not operator (`!`).
+
+## `ToBoolean` Conversions
+
+- `undefined` -----------> `false`
+- `null` -----------> `false`
+- `number` -----------> 
+  - if (+0, -0, NaN) then `false`
+  - else `true`
+
+- `string` -----------> 
+  - if empty string then `false`
+  - else `true`
+
+- `Symbol` -----------> `true`
+- `object` -----------> `true`
+
+## Examples
+
+- `!0` -> `true` 
+- `!4` -> `false`
+- `!{}` -> `false`
+- `!""` -> `true`
+- `!"a"` -> `false` 
+- `!undefined` -> `true`
+- `!null` -> `true`
+
+# JavaScript: == 🆚 ===
+
+**Myth:** Double equals doesn't check type 🤡
+
+**Reality:** Both check types 🗿
+
+Let's study them in detail 😎
+
+## Abstract Equality (==)
+
+### Working
+
+If we write `x == y`:
+
+1. Check the type of `x` and `y`.
+   - If `x` and `y` are of the same type, then go to the strict equality algorithm (`===`).
+   - If not the same type, do type conversion.
+
+Let's consider each case 🧐:
+
+- If `x` is a number and `y` is a string, it returns `x == ToNumber(y)`.
+- If `x` is a string and `y` is a number, it returns `ToNumber(x) == y`.
+- If `x` is `undefined`/`null` and `y` is `undefined`/`null`, it returns true.
+- If `x` is a boolean, it returns `ToNumber(x) == y`.
+- If `y` is a boolean, it returns `ToNumber(y) == x`.
+- If `x` is a primitive and `y` is an object, it returns `ToPrimitive(y) == x`, and vice versa.
+
+## Strict Equality (===)
+
+- Doesn't perform type conversion.
+
+### Working
+
+Checks if both operands are of the same type:
+- If not, return false.
+- If yes, check their equality.
+
+### Different Cases:
+
+- If `x` is `NaN` or `y` is `NaN`, return false.
+  - That's why `NaN === NaN` returns false.
+- If `x` and `y` have the same value, return true.
+- If `x` is `+0` and `y` is `-0`, return true, and vice versa.
+- Else, return false.
+
+
+# JavaScript: NaN (Not a Number) 🥵
+
+NaN doesn't mean "Not a Number"; rather, it gives the notion of an invalid number.
+
+🕯 Type NaN is 'number'.
+🕯 `NaN === NaN` is false.
+
+NaN is the only primitive value in JS that doesn't follow the identity property and is not equal to itself.
+
+To check if something is NaN:
+
+## `isNaN(x)` 🤡
+
+- It converts `x` to a number and then checks if `x` is NaN or not.
+
+```javascript
+isNaN(2) // false
+isNaN(true) // false
+isNaN("abc") // true, why? Because it is trying to convert this string into a number and then checking if it is NaN or not.
+```
+
+Another Method:
+
+## `Number.isNaN(x)` ☑️
+
+It doesn't convert type.
+
+```javascript
+Number.isNaN("abc") // false
+```
+
+🔥 **Debouncing and Throttling** 🔥
+
+📍 **Debouncing and throttling** are performance optimization techniques in JavaScript for managing event handlers.
+
+### What is Debouncing? 🤔
+
+🐢 **Debouncing** ensures that an event handler is not triggered multiple times or too quickly within a short time window, preventing excessive function calls. 
+
+It waits for a specified time delay after the last event occurrence before executing the event handler.
+
+### What is Throttling? 🤔
+
+🐢 **Throttling** immediately triggers the event handler upon the first occurrence and then executes it at predefined intervals thereafter, preventing rapid consecutive invocations.
+
+### Benefits 😎
+
+#### Debouncing 🦘 
+
+- Ensures that functions are only executed after a specified delay.
+- Reduces unnecessary function calls and improves performance.
+
+#### Throttling 💨
+
+- Limits the frequency of function invocations, particularly useful for events like scrolling where rapid firing could degrade user experience.
+
+# How to loop over objects? 🤔👀
+
+There are multiple ways to loop over objects in JavaScript.
+
+🔥 **for...in loop**
+
+This loop iterates over all enumerable properties of an object, including inherited ones.
+
+🔥 **Object.keys() method**
+
+This method returns an array of a given object's own enumerable property names.
+
+🔥 **Object.values() method**
+
+This method returns an array of a given object's own enumerable property values.
+
+🔥 **Object.entries() method**
+
+This method returns an array of a given object's own enumerable string-keyed property [key, value] pairs.
+
+🔥 **Object.getOwnPropertyNames() method**
+
+This method returns an array of all properties (including non-enumerable properties) found directly upon a given object.
+
+🔥 **Using a `for...of` loop with Object.entries()**
+
+This loop iterates over the values of an array, which is produced by Object.entries().
